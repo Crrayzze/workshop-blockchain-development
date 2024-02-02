@@ -2,7 +2,9 @@
   "scripts": {
     "compile": "npx hardhat compile",
     "deploy": "npx hardhat run scripts/deploy.ts --network polygon_mumbai",
-    "verify": "npx hardhat verify --network polygon_mumbai $DEPLOYED_CONTRACT_ADDRESS"
+    "deploy:mainnet": "npx hardhat run scripts/deploy.ts --network polygon_mainnet",
+    "verify": "npx hardhat verify --network polygon_mumbai $DEPLOYED_CONTRACT_ADDRESS",
+    "verify:mainnet": "npx hardhat verify --network polygon_mainnet $DEPLOYED_CONTRACT_ADDRESS"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",

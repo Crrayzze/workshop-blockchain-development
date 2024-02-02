@@ -24,11 +24,12 @@ contract NFTContract is ERC721, ERC721Burnable, Ownable, IERC721Receiver {
 
     function mint(
         string memory name,
-        string memory image
+        string memory image,
+        address to
     ) public onlyOwner returns (uint256) {
         uint256 tokenId = _nextTokenId++;
 
-        _safeMint(address(this), tokenId);
+        _safeMint(to, tokenId);
         _tokenMetadatas[tokenId] = NFTMetadata(name, image, tokenId);
 
         emit NewMint("A new token has been minted", tokenId);
